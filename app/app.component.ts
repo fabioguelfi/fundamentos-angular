@@ -6,6 +6,17 @@ import { Component } from "@angular/core";
   template: `
       <div class="app">
         <li *ngFor="let passageiro of passageiros; index as i">
+          <span class="status" 
+          [class.checked-in]="passageiro.checkedIn"></span>
+          {{ i + 1 }}: {{ passageiro.fullname }}
+        </li>
+        <br>
+        <li *ngFor="let passageiro of passageiros; index as i">
+          <span class="status" 
+          [ngClass]="{
+            'checked-in' : passageiro.checkedIn,
+            'checked-out' : !passageiro.checkedIn
+          }"></span>
           {{ i + 1 }}: {{ passageiro.fullname }}
         </li>
       </div>

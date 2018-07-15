@@ -20,9 +20,7 @@ Por favor, certifique-se de ter instalado o seguinte:
 
 Node Sass, você pode precisar se você ainda não o instalou:
 
-`` `bash
-npm install -g node-sass
-`` `
+`npm install -g node-sass` 
 
 ### Instalação de projetos
 
@@ -32,9 +30,7 @@ Para pegar o projeto semente, ou bifurque este repositório ou [clique aqui para
 
 Para instalar as dependências do projeto, você precisará usar `npm` ou `yarn`. Para instalar o `yarn`, execute o seguinte no seu terminal:
 
-`` `bash
-npm install -g yarn
-`` `
+`npm install -g yarn`
 
 Os usuários de Mac podem, alternativamente, usar `brew` para instalar` yarn`.
 

@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'app-root',
-    styleUrls: ['app.component.scss'],
-    template: `
+  selector: "app-root",
+  styleUrls: ["app.component.scss"],
+  template: `
       <div class="app">
-      <button (click)="handlerClick(username.value)">
-        Obter Valor
-      </button>
         <input
         type="text"
-        #username
+        (input)="handleInput($event.target.value)"
         >
+      <div *ngIf="name.length > 5; else template">
+        Buscando por ... {{ name }}
+      </div>
+      <ng-template #template>
         <div>
-        {{ name }}
+        Aguarde, estamos consultando nossa base de dados ...
         </div>
+      </ng-template>
       </div>
     `
 })
 export class AppComponent {
-  public name: string = '';
+  public name: string = "";
   constructor() {}
 
-  private handlerClick(username: string): void {
-    this.name = username;
+  private handleInput(value: string): void {
+    this.name = value;
   }
 }

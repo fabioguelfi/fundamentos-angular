@@ -5,10 +5,17 @@ import { Component } from '@angular/core';
     styleUrls: ['app.component.scss'],
     template: `
       <div class="app">
-        {{ title }}
-        <h1 [innerHtml]="title"></h1>
-        <img [src]="logo">
-        <input type="text" [value]="name">
+      <button 
+      (click)="handleClick()"
+      >
+      Click aqui
+      </button>
+        <input 
+        type="text" 
+        [value]="name"
+        (input)="handleInput($event)"
+        (change)="handleChange($event)"
+        >
         <div>
           {{ name }}
         </div>
@@ -17,10 +24,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public title: string = 'fabio guelfi';
-  public logo: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png';
   public name: string = 'Angular';
   constructor() {
+  }
+
+  private handleClick(): void {
+    this.name = 'Elon Musk';
+  }
+
+  private handleInput(event: any) {
+    this.name = event.target.value;
+  }
+
+  private handleChange(event: any): void {
+    this.name = event.target.value;
   }
 
 }

@@ -5,20 +5,14 @@ import { Component } from '@angular/core';
     styleUrls: ['app.component.scss'],
     template: `
       <div class="app">
-      <button 
-      (click)="handleClick()"
-      >
-      Click aqui
-      </button>
         <input 
-        type="text" 
-        [value]="name"
-        (input)="handleInput($event)"
-        (change)="handleChange($event)"
+        [(ngModel)]="name"
         >
-        <div>
-          {{ name }}
-        </div>
+        <br>
+        <button (click)="handleName()">
+          Two Data
+        </button>
+        {{ name }}
       </div>
     `
 })
@@ -28,16 +22,8 @@ export class AppComponent {
   constructor() {
   }
 
-  private handleClick(): void {
-    this.name = 'Elon Musk';
-  }
-
-  private handleInput(event: any) {
-    this.name = event.target.value;
-  }
-
-  private handleChange(event: any): void {
-    this.name = event.target.value;
+  private handleName(): void {
+      this.name = 'Two Data';
   }
 
 }

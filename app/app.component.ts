@@ -6,22 +6,20 @@ import { Component } from '@angular/core';
     template: `
       <div class="app">
         {{ title }}
+        <h1 [innerHtml]="title"></h1>
+        <img [src]="logo">
+        <input type="text" [value]="name">
         <div>
-        {{ numero1 + numero2 }}
-        </div>
-        <div>
-          {{ isHappy ? ':)' : ':(' }}
+          {{ name }}
         </div>
       </div>
     `
 })
 export class AppComponent {
 
-  public title: string = 'fabio guelfi'
-  public numero1: number = 7;
-  public numero2: number = 7;
-  public isHappy: boolean = false;
-
+  public title: string = 'fabio guelfi';
+  public logo: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png';
+  public name: string = 'Angular';
   constructor() {
   }
 

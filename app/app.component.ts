@@ -6,15 +6,23 @@ import { Component } from '@angular/core';
     template: `
       <div class="app">
         {{ title }}
+        <div>
+        {{ numero1 + numero2 }}
+        </div>
+        <div>
+          {{ isHappy ? ':)' : ':(' }}
+        </div>
       </div>
     `
 })
 export class AppComponent {
 
-  public title: string;
+  public title: string = 'fabio guelfi'
+  public numero1: number = 7;
+  public numero2: number = 7;
+  public isHappy: boolean = false;
 
   constructor() {
-    this.title = `Angular Fundamentos`
   }
 
 }

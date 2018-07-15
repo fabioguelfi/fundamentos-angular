@@ -1,6 +1,6 @@
-# Angular Fundamentals Seed
+# Angular Fundamentos
 
-> [Angular Fundamental] de [Fabio Guelfi] (https://github.com/fabioguelfi).
+> [Angular Fundamentos] de [Fabio Guelfi] (https://github.com/fabioguelfi).
 
 ## Configuração e ferramentas de projeto
 

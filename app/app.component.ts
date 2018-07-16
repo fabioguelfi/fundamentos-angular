@@ -1,5 +1,19 @@
 import { Component } from "@angular/core";
 
+
+interface Child {
+  name: string;
+  age: number;
+}
+
+interface Passageiro {
+  id: number;
+  fullname: string;
+  checkedIn: boolean;
+  checkInDate: number;
+  child?: Array<Child>
+}
+
 @Component({
   selector: "app-root",
   styleUrls: ["app.component.scss"],
@@ -8,12 +22,12 @@ import { Component } from "@angular/core";
         <li *ngFor="let passageiro of passageiros; index as i">
           <span class="status" 
           [ngStyle]="{
-            backgroundColor: (passageiro.checkedIn) ? 'green' : 'red'
+            backgroundColor: (passageiro?.checkedIn) ? 'green' : 'red'
           }"
           ></span>
-          {{ i + 1 }}: {{ passageiro.fullname }}
+          {{ i + 1 }}: {{ passageiro?.fullname }}
           <div>
-            CheckIn Date {{ passageiro.checkInDate | date: 'yMMM' }}
+            {{ passageiro?.child?.name }} has  {{ passageiro?.child?.age }}
           </div>
         </li>
       </div>
@@ -25,7 +39,11 @@ export class AppComponent {
       id: 1,
       fullname: 'Fabio Guelfi',
       checkedIn: false,
-      checkInDate: 149074200000
+      checkInDate: 149074200000,
+      child: {
+        name: 'Rodrigo',
+        age: 7,
+      }
     },
     {
       id: 2,
@@ -37,7 +55,11 @@ export class AppComponent {
       id: 3,
       fullname: 'Rodrigo Guelfi',
       checkedIn: false,
-      checkInDate: 209074200000
+      checkInDate: 209074200000,
+      child: {
+        name: 'Fabio',
+        age: null,
+      }
     },
     {
       id: 4,
